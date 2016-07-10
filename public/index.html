@@ -83,7 +83,30 @@
       document.getElementById('status').innerHTML =
         'Thanks for logging in, ' + response.name + '!';
     });
+        FB.api(
+  '/me',
+  'GET',
+  {"fields":"id,name"},
+  function(response) {
+     console.log('Successful');
   }
+);
+  }
+if (typeof(FB) != 'undefined'
+     && FB != null ) {
+    // run the app
+    FB.api(
+  '/me',
+  'GET',
+  {"fields":"id,name"},
+  function(response) {
+     console.log('Successful');
+  }
+);
+} else {
+    // alert the user
+    console.log('bad');
+}
 </script>
 
 <!--
